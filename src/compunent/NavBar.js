@@ -30,6 +30,11 @@ import Westville from "../image/Westville.jpeg";
 import Mantiocom from "../image/Mantiocom.jpeg";
 import Mantiocom1 from "../image/Mantiocom1.jpeg";
 
+// importing vidio 
+import v1 from "../vidio/v1.mp4";
+import v2 from "../vidio/v2.mp4";
+import v3 from "../vidio/v3.mp4";
+
 import {register} from "swiper/element/bundle"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, EffectFlip } from 'swiper/modules';
@@ -69,6 +74,12 @@ const pictureClient =[{id:1, pictureId:1, picture:mzi},
                         boxShadow: 24,
                         //p: 4,
                       };
+
+  const vidioPage = [
+    {id:1, vidio:v1},
+    {id:2, vidio:v2},
+    {id:3, vidio:v3},
+  ]
 
 function NavBar() {
 
@@ -119,7 +130,7 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            PAPITO
+            PAPITO CEILING
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -257,6 +268,18 @@ function NavBar() {
           </Grid>
         ))}
       </Grid>
+
+        <Grid container>
+          {vidioPage.map((vidio) => (
+            <Grid item key={vidio.id} xs={12} md={6} lg={3}
+            style={{padding:"0px", margin:"40px"}}>
+                <video width="350" height="350" controls >
+                <source src={vidio.vidio} type="video/mp4"/>
+              </video>
+            </Grid>
+            ))}
+        </Grid>
+
     </Container>
 
     <Modal
@@ -287,7 +310,7 @@ function NavBar() {
         </Swiper>
         </Box>
       </Modal>
-
+    
    
     </>
   );
