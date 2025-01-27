@@ -32,13 +32,14 @@ import Mantiocom1 from "../image/Mantiocom1.jpeg";
 
 import {register} from "swiper/element/bundle"
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-
+import { Navigation, Pagination, Scrollbar, A11y, EffectFlip } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import 'swiper/css/effect-cards';
+import 'swiper/css/effect-flip';
 
 register();
 const pages = ['All Jobs', 'This year jobs', 'Recent Jobs'];
@@ -216,8 +217,9 @@ function NavBar() {
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        style={{width:"100%", height:"400px", marginTop:"10px",
-          objectFit:"cover"
+        style={{width:"80%", height:"200px",
+          objectFit:"cover", marginTop:"10px",
+          borderRadius:"10px"
         }}
         >
            {pictureClient.map((client) => (
@@ -264,11 +266,25 @@ function NavBar() {
         aria-labelledby="keep-mounted-modal-title"
         aria-describedby="keep-mounted-modal-description"
       >
-        <Box sx={style}>
-                  {newPicture.map((client) => (
-                    <img  onClick={() => handleClickImage(client.id)} style={{width:"320px", height:"230px", 
-                      borderRadius:"5px", margin:"5px"}} src={client.picture} alt="image nao desponivel"/>
-                  ))}
+        <Box sx={style} style={{borderRadius:"10px"}}>
+          <Swiper
+           effect={'flip'}
+           grabCursor={true}
+           pagination={true}
+           navigation={true}
+           modules={[EffectFlip, Pagination, Navigation]}
+            style={{width:"100%", height:"100%",
+              objectFit:"cover", borderRadius:"10px"
+            }}
+            >
+           {newPicture.map((client) => (
+              <SwiperSlide key={client.id}>
+                <img style={{width:"100%", height:"100%", borderRadius:"10px"}} src={client.picture} 
+                alt='image not avaleble'
+                />
+              </SwiperSlide>
+            ))}   
+        </Swiper>
         </Box>
       </Modal>
 
