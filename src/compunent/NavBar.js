@@ -30,6 +30,17 @@ import Westville from "../image/Westville.jpeg";
 import Mantiocom from "../image/Mantiocom.jpeg";
 import Mantiocom1 from "../image/Mantiocom1.jpeg";
 
+import {register} from "swiper/element/bundle"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+register();
 const pages = ['All Jobs', 'This year jobs', 'Recent Jobs'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const clientDate = [{id:1, name:"Mzinhate job", pictureId:1, location:"durban", phoneNumber:"+27694605399", profile:mzi5},
@@ -198,8 +209,28 @@ function NavBar() {
         </Toolbar>
       </Container>
     </AppBar>
-    <br/>
     <Container>
+      <Swiper
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        style={{width:"100%", height:"400px", marginTop:"10px",
+          objectFit:"cover"
+        }}
+        >
+           {pictureClient.map((client) => (
+              <SwiperSlide key={client.id}>
+                <img src={client.picture} 
+                alt='image not avaleble'
+                style={{}}/>
+              </SwiperSlide>
+            ))}   
+        </Swiper>
+
+      <br/>
+   
 
       <h2><strong style={{textAlign:"center"}}>WELCOME TO PAPITOS SLINGER JOBS</strong></h2>
       <Grid container>
