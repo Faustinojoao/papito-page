@@ -221,7 +221,9 @@ function NavBar() {
         </Toolbar>
       </Container>
     </AppBar>
+    
     <Container>
+    
       <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
         slidesPerView={1}
@@ -240,10 +242,23 @@ function NavBar() {
                 style={{}}/>
               </SwiperSlide>
             ))}   
-        </Swiper>
-
-      <br/>
+      </Swiper>
    
+      <Grid container>
+          {vidioPage.map((vidio) => (
+            <Grid item key={vidio.id} xs={12} md={6} lg={4}
+            >
+              <video  width="350" height="350" controls >
+              <source  src={vidio.vidio} type="video/mp4"/>
+              </video>
+            </Grid>
+            ))}
+    </Grid>
+    <br/>
+    <br/>
+
+    <h2><strong style={{color:"white",width:"100%", 
+      padding:"10px", background:"#1976d2", borderRadius:"10px"}}>work done for clients</strong></h2>
       <Grid container>
         {clientDate.map((client) => (
           <Grid item key={client.id} xs={12} md={6} lg={4}
@@ -269,16 +284,7 @@ function NavBar() {
         ))}
       </Grid>
 
-        <Grid container>
-          {vidioPage.map((vidio) => (
-            <Grid item key={vidio.id} xs={12} md={6} lg={3}
-            style={{padding:"0px", margin:"40px"}}>
-                <video width="350" height="350" controls >
-                <source src={vidio.vidio} type="video/mp4"/>
-              </video>
-            </Grid>
-            ))}
-        </Grid>
+        
 
     </Container>
 
