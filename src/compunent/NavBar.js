@@ -231,8 +231,6 @@ function NavBar() {
 
       <br/>
    
-
-      <h2><strong style={{textAlign:"center"}}>WELCOME TO PAPITOS SLINGER JOBS</strong></h2>
       <Grid container>
         {clientDate.map((client) => (
           <Grid item key={client.id} xs={12} md={6} lg={4}
