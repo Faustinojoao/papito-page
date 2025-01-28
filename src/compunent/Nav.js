@@ -12,15 +12,15 @@ export default function Nav() {
             </IconButton>
             <Typography variant='h6' component="div" sx={{flexGrow:1}}>
                 
-                <Link to={"/"} style={{ color: "inherit" }}>
+                <Link to={"/"} style={{ color: "inherit", textDecoration:"none" }}>
                 PAPITO CEILING
             </Link>
             </Typography>
             <Stack direction="row" spacing={2}>
-            <Link to={"/all-jobs"} style={{ color: "inherit" }}>
+            <Link to={"/all-jobs"} style={{ color: "inherit", textDecoration:"none" }}>
                 All Jobs
             </Link>
-            <Link to={"/videos-page"} style={{ color: "inherit" }}>
+            <Link to={"/videos-page"} style={{ color: "inherit", textDecoration:"none" }}>
                 All vidios
             </Link>
            
