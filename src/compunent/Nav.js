@@ -19,10 +19,10 @@ export default function Nav() {
             </Typography>
             <Stack direction="row" spacing={2}>
             <Link to={"/all-jobs"} style={{ color: "inherit", textDecoration:"none" }}>
-                All Jobs
+                All Picture
             </Link>
             <Link to={"/videos-page"} style={{ color: "inherit", textDecoration:"none" }}>
-                All vidios
+                All Vidios
             </Link>
            
                
