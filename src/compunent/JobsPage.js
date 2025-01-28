@@ -40,7 +40,7 @@ export default function JobsPage() {
        <Grid container>
           {pictureClient.map((image) => (
             <Grid item key={image.id} xs={12} md={6} lg={4}
-            style={{ marginTop:"100px",
+            style={{ marginTop:"20px",
               borderRadius:"10px"
             }}
             >
