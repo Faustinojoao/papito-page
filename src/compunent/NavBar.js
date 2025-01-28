@@ -47,33 +47,45 @@ import 'swiper/css/effect-cards';
 import 'swiper/css/effect-flip';
 
 register();
-const pages = ['All Jobs', 'This year jobs', 'Recent Jobs'];
+const pages = ['All Jobs', 'All videos'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-const clientDate = [{id:1, name:"Mzinhate job", pictureId:1, location:"durban", phoneNumber:"+27694605399", profile:mzi5},
-                    {id:2, name:"Durban North", pictureId:2, location:"Durban North", phoneNumber:"+27646790035", profile:north},
-                    {id:3, name:"Mayville", pictureId:3, location:"Mayville", phoneNumber:"0788938969", profile:Mayville},
-                    {id:4, name:"lindelane", pictureId:4, location:"lindelane", phoneNumber:"+27660783070", profile:lindelane},
-                    {id:5, name:"Westville", pictureId:5, location:"Westville", phoneNumber:"+27837573122", profile:Westville},
-                    {id:6, name:"Mantiocom", pictureId:6, location:"Mantiocom", phoneNumber:"", profile:Mantiocom1}]
-const pictureClient =[{id:1, pictureId:1, picture:mzi},
-                      {id:2, pictureId:1, picture:mzi1},
-                      {id:3, pictureId:1, picture:mzi2},
-                      {id:4, pictureId:1, picture:mzi3},
-                      {id:5, pictureId:1, picture:mzi4},
-                      {id:6, pictureId:1, picture:mzi5}]
 
-                      const style = {
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                        width: 600,
-                        height:500,
-                        bgcolor: 'background.paper',
-                        border: '2px solid #000',
-                        boxShadow: 24,
-                        //p: 4,
-                      };
+const clientDate = [
+  {id:1, name:"Mzinhate job", pictureId:1, location:"durban", phoneNumber:"+27694605399", profile:mzi5},
+  {id:2, name:"Durban North", pictureId:2, location:"Durban North", phoneNumber:"+27646790035", profile:north},
+  {id:3, name:"Mayville", pictureId:3, location:"Mayville", phoneNumber:"0788938969", profile:Mayville},
+  {id:4, name:"lindelane", pictureId:4, location:"lindelane", phoneNumber:"+27660783070", profile:lindelane},
+  {id:5, name:"Westville", pictureId:5, location:"Westville", phoneNumber:"+27837573122", profile:Westville},
+  {id:6, name:"Mantiocom", pictureId:6, location:"Mantiocom", phoneNumber:"", profile:Mantiocom1}
+]
+
+const pictureClient =[
+  {id:1, pictureId:1, picture:mzi},
+  {id:2, pictureId:1, picture:mzi1},
+  {id:3, pictureId:1, picture:mzi2},
+  {id:4, pictureId:1, picture:mzi3},
+  {id:5, pictureId:1, picture:mzi4},
+  {id:6, pictureId:1, picture:mzi5},
+  {id:7, pictureId:1, picture:north},
+  {id:8, pictureId:1, picture:Mayville},
+  {id:9, pictureId:1, picture:lindelane},
+  {id:10, pictureId:1, picture:Westville},
+  {id:11, pictureId:1, picture:Mantiocom},
+  {id:12, pictureId:1, picture:Mantiocom1}
+]
+
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 600,
+    height:500,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    //p: 4,
+  };
 
   const vidioPage = [
     {id:1, vidio:v1},
@@ -283,9 +295,6 @@ function NavBar() {
           </Grid>
         ))}
       </Grid>
-
-        
-
     </Container>
 
     <Modal
